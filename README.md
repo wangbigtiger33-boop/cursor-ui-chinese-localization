@@ -11,15 +11,15 @@
 
 | 欢迎页 | 设置页 |
 | --- | --- |
-| ![欢迎页汉化](./docs/screenshots/welcome-screen-zh.png) | ![设置页汉化](./docs/screenshots/settings-general-zh.png) |
+| ![欢迎页汉化](./docs/screenshots/cursor-final-20260604-welcome.png) | ![设置页汉化](./docs/screenshots/cursor-final-20260604-settings.png) |
 
 | 智能体输入区 | 自动化页 |
 | --- | --- |
-| ![智能体输入区汉化](./docs/screenshots/agent-input-zh.png) | ![自动化页汉化](./docs/screenshots/automation-page-zh.png) |
+| ![智能体输入区汉化](./docs/screenshots/cursor-final-20260604-agent-input.png) | ![自动化页汉化](./docs/screenshots/cursor-final-20260604-automation.png) |
 
-| 插件市场 | 分组方式菜单 |
+| 插件市场 | 环境筛选菜单 |
 | --- | --- |
-| ![插件市场汉化](./docs/screenshots/plugin-marketplace-grid-zh.png) | ![分组方式菜单汉化](./docs/screenshots/group-environment-menu-zh.png) |
+| ![插件市场汉化](./docs/screenshots/cursor-final-20260604-marketplace.png) | ![环境筛选菜单汉化](./docs/screenshots/cursor-final-20260604-environment-menu.png) |
 
 更多截图见 [docs/screenshots](./docs/screenshots)。
 
@@ -86,7 +86,7 @@ node ./reapply-cursor-zh-localization.js --target "/Applications/Cursor.app/Cont
 
 - 用户自己的历史对话标题，例如 `Greeting conversation`。
 - 品牌名和产品名，例如 Slack、Linear、Datadog、Figma。
-- 插件市场远程返回的插件描述，这些内容来自网络接口，随时变化。
+- 插件市场远程返回的插件名称和描述，这些内容来自网络接口，随时变化。
 - 必须保留识别性的开发缩写，例如 MCP、SDK、API、Git。
 
 ## 回滚
