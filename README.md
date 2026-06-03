@@ -9,17 +9,17 @@
 
 ## 效果预览
 
-| 设置页 | 自动化页 |
+| 欢迎页 | 设置页 |
 | --- | --- |
-| ![设置页汉化](./docs/screenshots/settings-general-zh.png) | ![自动化页汉化](./docs/screenshots/automation-page-zh.png) |
+| ![欢迎页汉化](./docs/screenshots/welcome-screen-zh.png) | ![设置页汉化](./docs/screenshots/settings-general-zh.png) |
 
-| 插件市场 | 分组筛选 |
+| 智能体输入区 | 自动化页 |
 | --- | --- |
-| ![插件市场汉化](./docs/screenshots/plugin-marketplace-grid-zh.png) | ![分组筛选菜单汉化](./docs/screenshots/filter-status-menu-zh.png) |
+| ![智能体输入区汉化](./docs/screenshots/agent-input-zh.png) | ![自动化页汉化](./docs/screenshots/automation-page-zh.png) |
 
-| 智能体输入区 | 设置侧栏 |
+| 插件市场 | 分组方式菜单 |
 | --- | --- |
-| ![智能体输入区汉化](./docs/screenshots/agent-input-zh.png) | ![设置侧栏汉化](./docs/screenshots/settings-sidebar-zh.png) |
+| ![插件市场汉化](./docs/screenshots/plugin-marketplace-grid-zh.png) | ![分组方式菜单汉化](./docs/screenshots/group-environment-menu-zh.png) |
 
 更多截图见 [docs/screenshots](./docs/screenshots)。
 
