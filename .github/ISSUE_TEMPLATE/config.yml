@@ -1,0 +1,5 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Cursor 官方支持
+    url: https://cursor.com
+    about: Cursor 官方产品问题请优先联系官方支持。本项目只维护非官方界面汉化补丁。

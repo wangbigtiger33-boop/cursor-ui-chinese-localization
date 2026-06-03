@@ -3,13 +3,32 @@
   "version": "0.1.0",
   "private": false,
   "description": "Unofficial Chinese UI localization patch for macOS Cursor.",
+  "homepage": "https://github.com/wangbigtiger33-boop/cursor-ui-chinese-localization#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wangbigtiger33-boop/cursor-ui-chinese-localization.git"
+  },
+  "bugs": {
+    "url": "https://github.com/wangbigtiger33-boop/cursor-ui-chinese-localization/issues"
+  },
+  "keywords": [
+    "cursor",
+    "cursor-editor",
+    "localization",
+    "chinese",
+    "macos",
+    "ui-translation"
+  ],
   "bin": {
     "cursor-ui-zh": "./reapply-cursor-zh-localization.js"
   },
   "scripts": {
     "check": "node --check reapply-cursor-zh-localization.js",
+    "help": "node reapply-cursor-zh-localization.js --help",
     "dry-run": "node reapply-cursor-zh-localization.js --dry-run"
+  },
+  "engines": {
+    "node": ">=18"
   },
   "license": "MIT"
 }
-

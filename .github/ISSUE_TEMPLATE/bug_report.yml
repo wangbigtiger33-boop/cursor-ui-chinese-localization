@@ -1,0 +1,40 @@
+name: Bug report
+description: 报告运行脚本或使用汉化界面时遇到的问题
+title: "[Bug]: "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        感谢反馈。请尽量裁掉截图中的邮箱、账号、历史对话标题和私有仓库路径。
+  - type: input
+    id: macos-version
+    attributes:
+      label: macOS 版本
+      placeholder: "例如：macOS 15.x"
+    validations:
+      required: true
+  - type: input
+    id: cursor-version
+    attributes:
+      label: Cursor 版本
+      placeholder: "例如：3.6.31"
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: 问题描述
+      description: 发生了什么？预期应该是什么？
+    validations:
+      required: true
+  - type: textarea
+    id: script-output
+    attributes:
+      label: 脚本输出
+      render: shell
+  - type: textarea
+    id: verification
+    attributes:
+      label: 已尝试的验证或回滚
+      placeholder: "例如：npm run check 通过；回滚备份后 Cursor 可启动。"

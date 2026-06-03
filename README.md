@@ -1,8 +1,27 @@
 # Cursor UI Chinese Localization
 
+[![CI](https://github.com/wangbigtiger33-boop/cursor-ui-chinese-localization/actions/workflows/ci.yml/badge.svg)](https://github.com/wangbigtiger33-boop/cursor-ui-chinese-localization/actions/workflows/ci.yml)
+[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](./LICENSE)
+
 一个非官方的 Cursor 操作界面汉化项目，目标是让中文母语用户能看懂主要按钮、菜单、设置项、筛选项和常用提示。
 
-本项目不修改 Cursor 核心功能逻辑，只对 macOS Cursor app bundle 中的前端可见 UI 文案做精确替换。适合给中文用户自用，也适合交给其他智能体继续维护。
+本项目不修改 Cursor 核心功能逻辑，只对 macOS Cursor app bundle 中的前端可见 UI 文案做精确替换。它适合中文用户自用，也适合交给其他智能体继续维护。
+
+## 效果预览
+
+| 设置页 | 自动化页 |
+| --- | --- |
+| ![设置页汉化](./docs/screenshots/settings-general-zh.png) | ![自动化页汉化](./docs/screenshots/automation-page-zh.png) |
+
+| 插件市场 | 分组筛选 |
+| --- | --- |
+| ![插件市场汉化](./docs/screenshots/plugin-marketplace-grid-zh.png) | ![分组筛选菜单汉化](./docs/screenshots/filter-status-menu-zh.png) |
+
+| 智能体输入区 | 设置侧栏 |
+| --- | --- |
+| ![智能体输入区汉化](./docs/screenshots/agent-input-zh.png) | ![设置侧栏汉化](./docs/screenshots/settings-sidebar-zh.png) |
+
+更多截图见 [docs/screenshots](./docs/screenshots)。
 
 ## 当前适配
 
@@ -13,22 +32,24 @@
 
 ## 快速使用
 
-先退出 Cursor，然后运行：
+1. 退出 Cursor。
+2. 克隆或下载本仓库。
+3. 在仓库目录运行：
 
 ```bash
 node ./reapply-cursor-zh-localization.js
-```
-
-自定义 Cursor bundle 路径：
-
-```bash
-node ./reapply-cursor-zh-localization.js --target "/Applications/Cursor.app/Contents/Resources/app/out/vs/workbench/workbench.desktop.main.js"
 ```
 
 只预览，不写入：
 
 ```bash
 node ./reapply-cursor-zh-localization.js --dry-run
+```
+
+自定义 Cursor bundle 路径：
+
+```bash
+node ./reapply-cursor-zh-localization.js --target "/Applications/Cursor.app/Contents/Resources/app/out/vs/workbench/workbench.desktop.main.js"
 ```
 
 脚本会自动：
@@ -68,63 +89,6 @@ node ./reapply-cursor-zh-localization.js --dry-run
 - 插件市场远程返回的插件描述，这些内容来自网络接口，随时变化。
 - 必须保留识别性的开发缩写，例如 MCP、SDK、API、Git。
 
-## 给智能体的最短接手说明
-
-如果你要把这个项目发给别的智能体，优先给它看：
-
-- [AGENT_BRIEF.md](./AGENT_BRIEF.md)
-- [reapply-cursor-zh-localization.js](./reapply-cursor-zh-localization.js)
-
-这两个文件足够它用最少 token 理解目标、风险和恢复方式。
-
-## 发布到 GitHub
-
-本目录已经按开源项目整理：
-
-- `README.md`：给用户看的项目首页。
-- `AGENT_BRIEF.md`：给其他智能体看的极简接手说明。
-- `reapply-cursor-zh-localization.js`：零依赖补丁脚本。
-- `package.json`：提供 `npm run check` 和 `npm run dry-run`。
-- `LICENSE`：MIT 许可证。
-- `PUBLISHING.md`：GitHub 发布步骤。
-
-## 维护原则
-
-1. 只改可见 UI 文案，例如 `label`、`title`、`placeholder`、按钮文案、空状态文案。
-2. 不改内部枚举值、命令 ID、配置 key、事件名、模型 ID、路径、CSS class。
-3. 不使用全局 DOM 扫描替换。
-4. 每轮修改后必须运行：
-
-```bash
-node --check "/Applications/Cursor.app/Contents/Resources/app/out/vs/workbench/workbench.desktop.main.js"
-```
-
-5. 修改后重启 Cursor，并至少实测设置页、插件页、插件市场、自动化页、分组方式菜单。
-
-## 已知风险
-
-Cursor 更新后，app bundle 可能被覆盖，需要重新运行脚本。
-
-修改 Cursor app bundle 可能触发完整性提示。本项目脚本默认会补丁掉已知的完整性提示逻辑。若你不希望修改这部分，可运行：
-
-```bash
-node ./reapply-cursor-zh-localization.js --skip-integrity-patch
-```
-
-曾经导致卡死的做法：全局注入 `cursor-zh-visible-text-patch`，用 MutationObserver 扫描页面所有可见文本并替换。这个方法会导致 Cursor 窗口无响应，本项目明确禁止。
-
-## 验证结果
-
-2026-06-04 实测通过：
-
-- Cursor 能正常启动，没有窗口未响应。
-- 自动化页能打开。
-- 设置页能打开。
-- 插件页能打开，搜索框显示“搜索或粘贴链接”。
-- 插件市场能打开，左栏和“获取”按钮正常显示。
-- 分组方式菜单及状态、Git、归档/未读、来源、元数据子菜单均可打开。
-- `cursor-zh-visible-text-patch` 无残留。
-
 ## 回滚
 
 每次运行脚本都会备份原始 bundle 到：
@@ -140,6 +104,26 @@ node ./reapply-cursor-zh-localization.js --skip-integrity-patch
 ```
 
 然后重启 Cursor。
+
+## 文档
+
+- [AGENT_BRIEF.md](./AGENT_BRIEF.md)：给其他智能体看的极简接手说明。
+- [docs/VERIFY.md](./docs/VERIFY.md)：每次补丁后的实测清单。
+- [docs/MAINTENANCE.md](./docs/MAINTENANCE.md)：更新 Cursor 后如何继续维护。
+- [CONTRIBUTING.md](./CONTRIBUTING.md)：如何提交汉化补充和问题反馈。
+- [CHANGELOG.md](./CHANGELOG.md)：版本更新记录。
+
+## 已知风险
+
+Cursor 更新后，app bundle 可能被覆盖，需要重新运行脚本。
+
+修改 Cursor app bundle 可能触发完整性提示。本项目脚本默认会补丁掉已知的完整性提示逻辑。若你不希望修改这部分，可运行：
+
+```bash
+node ./reapply-cursor-zh-localization.js --skip-integrity-patch
+```
+
+曾经导致卡死的做法：全局注入 `cursor-zh-visible-text-patch`，用 MutationObserver 扫描页面所有可见文本并替换。这个方法会导致 Cursor 窗口无响应，本项目明确禁止。
 
 ## 许可证
 
