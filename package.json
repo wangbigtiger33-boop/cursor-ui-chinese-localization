@@ -1,0 +1,15 @@
+{
+  "name": "cursor-ui-chinese-localization",
+  "version": "0.1.0",
+  "private": false,
+  "description": "Unofficial Chinese UI localization patch for macOS Cursor.",
+  "bin": {
+    "cursor-ui-zh": "./reapply-cursor-zh-localization.js"
+  },
+  "scripts": {
+    "check": "node --check reapply-cursor-zh-localization.js",
+    "dry-run": "node reapply-cursor-zh-localization.js --dry-run"
+  },
+  "license": "MIT"
+}
+
