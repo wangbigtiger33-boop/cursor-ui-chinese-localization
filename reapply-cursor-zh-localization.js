@@ -123,6 +123,13 @@ function buildReplacements() {
   ];
 
   const limitedVisibleText = [
+    ["New Agent", "新建智能体", 80],
+    ["Automations", "自动化", 180],
+    ["Customize", "自定义", 80],
+    ["Repositories", "仓库", 250],
+    ["No agents yet", "暂无智能体", 8],
+    ["Plan, Build, / for skills, @ for context", "计划、构建，输入 / 调用技能，输入 @ 添加上下文", 8],
+    ["Plan New Idea", "规划新想法", 4],
     ["Group by", "分组方式", 12],
     ["Show Machine Label", "显示机器标签", 4],
     ["Show Icon", "显示图标", 8],
